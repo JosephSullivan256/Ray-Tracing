@@ -1,5 +1,5 @@
 
-public class SphereLight extends Sphere{
+public class SphereLight extends Sphere implements Renderable{
 	
 	public SphereLight(float rad, Vec3 pos, Vec3 col) {
 		super(rad, pos, col);
@@ -10,8 +10,9 @@ public class SphereLight extends Sphere{
 		if(intersect == null) return Float.POSITIVE_INFINITY;
 		return intersect(r).minus(r.pt).mag();
 	}
-	
-	public Vec3 col(Ray r){
-		return col;//.scaledBy(1f/perpendicularDistance2(r));
+
+	@Override
+	public Vec3 shoot(Ray r, Scene s, int n) {
+		return col;
 	}
 }

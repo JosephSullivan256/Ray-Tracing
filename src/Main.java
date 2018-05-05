@@ -16,17 +16,14 @@ public class Main {
 		Vec3 red = new Vec3(0.804f, 0.361f, 0.361f);
 		
 		Renderable[] rs = new Renderable[]{
+				new SphereLight(1f,new Vec3(4f,-2f,9),new Vec3(2,2,2)),
 				new RSphere(1f,new Vec3(0,0,6),coral,mirror),
 				new RSphere(1f,new Vec3(3,1f,8),coral,mirror),
 				new RSphere(1f,new Vec3(-2,-2,9),coral,mirror),
 				new RPlane(new Vec3(0,2,0), new Vec3(0,1,0),red,diffuse),
 		};
 		
-		SphereLight[] pointLights = new SphereLight[] {
-				new SphereLight(1f,new Vec3(4f,-2f,9),new Vec3(2,2,2)),
-		};
-		
-		Scene s = new Scene(rs,pointLights);
+		Scene s = new Scene(rs);
 		
 		Renderer r = new Renderer();
 		
