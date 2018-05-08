@@ -20,5 +20,5 @@ public class Vec3 {
 	public static final Vec3 zero = new Vec3(0,0,0);
 	public static Vec3 random() { return new Vec3((float)Math.random(),(float)Math.random(),(float)Math.random()); }
 	
-	public static final float epsilon = 0.000001f;
+	public static final float epsilon = 0.00001f;
 }

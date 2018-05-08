@@ -12,6 +12,7 @@ public class Scene {
 		Renderable r0 = closestRenderable(r);
 		if(r0 != null) return r0.shoot(r, this, n);
 		return new Vec3(0.529f, 0.808f, 0.980f);
+		//return new Vec3(1,0.9f,0.9f);
 	}
 	
 	private Renderable closestRenderable(Ray r){

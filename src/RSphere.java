@@ -20,8 +20,9 @@ public class RSphere extends Sphere implements Renderable {
 		Ray reflect = reflect(r);
 		if(reflect != null){
 			Vec3 normal = normal(r.pt);
-			Vec3 dir = reflect.dir;
-			Vec3 light = m.getColor(reflect.pt, normal, dir, s, n-1);
+			Vec3 refl = reflect.dir;
+			Vec3 refr = r.dir.minus(normal.scaledBy(r.dir.dot(normal)));
+			Vec3 light = m.getColor(reflect.pt, normal, refl, refr, s, n-1);
 			return light.times(col);
 		}
 		return Vec3.zero;
