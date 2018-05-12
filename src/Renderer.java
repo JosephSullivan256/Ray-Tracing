@@ -33,7 +33,6 @@ public class Renderer {
 				Vec3 col = s.shoot(r,n);
 				image.setRGB(x, y, col.toColor().getRGB());
 			}
-			//if(x%5==0) System.out.println((float)x/(float)width);
 		}
 	}
 }
