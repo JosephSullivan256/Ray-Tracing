@@ -14,8 +14,6 @@ public class Renderer {
 		Vec3 pos = rp.transform.times(Vec3.zero.asMatrix4p()).asVec3();
 		int n = rp.n;
 		
-		float pi = (float) Math.PI;
-		
 		for(int x = 0; x < width; x++){
 			float xtheta = -xfov*0.5f+xfov*((float)x)/(width);
 			
