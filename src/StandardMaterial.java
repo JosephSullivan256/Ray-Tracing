@@ -4,6 +4,8 @@ public class StandardMaterial implements Material {
 	private int raysCount;
 	private float[] weights;
 	
+	private int diffuseRays;
+	
 	public StandardMaterial(int raysCount, float[] weights){
 		this.raysCount = raysCount;
 		this.weights = weights;
@@ -26,5 +28,9 @@ public class StandardMaterial implements Material {
 		
 		return light.scaledBy(1f/(float)raysCount);
 	}
-
+	
+	/*@Override
+	public Vec3 getColor(Vec3 pt, Vec3 normal, Vec3 refl, Vec3 refr, Scene s, int n) {
+		
+	}*/
 }

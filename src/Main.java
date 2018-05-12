@@ -1,10 +1,4 @@
-import java.awt.Graphics2D;
-import java.awt.RenderingHints;
 import java.awt.image.BufferedImage;
-
-import javax.swing.ImageIcon;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
 
 public class Main {
 	
@@ -33,20 +27,13 @@ public class Main {
 		BufferedImage image = new BufferedImage(400,400,BufferedImage.TYPE_INT_ARGB);
 		r.render(image, rp, s);
 		
-		/*BufferedImage displayImage = new BufferedImage(600,600,BufferedImage.TYPE_INT_ARGB);
-		Graphics2D g2d = displayImage.createGraphics();
-		g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-		g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-		g2d.drawImage(image, 0, 0, 600, 600, null);
-		g2d.dispose();*/
-		
 		Display d = new Display(image);
-		float i = 0;
+		/*float i = 0;
 		while(true){
 			i++;
 			rp = new RenderParameters((float)Math.PI/((float)Math.sin(i/10f)+2f), new Vec3(3f*(float)Math.sin((i)/10f+Math.PI/2f),0.5f,0),4);
 			r.render(image, rp, s);
 			d.update(image);
-		}
+		}*/
 	}
 }
