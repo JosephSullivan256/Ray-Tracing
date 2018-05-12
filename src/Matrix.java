@@ -26,6 +26,24 @@ public class Matrix {
 	
 	public static final Matrix m44i = Matrix.i(4); //4x4 identity
 	
+	public static Matrix s44(Vec3 v) {
+		return new Matrix(new float[][] {
+			{v.x,0,0,0},
+			{0,v.y,0,0},
+			{0,0,v.z,0},
+			{0,0,0,1}
+		});
+	}
+	
+	public static Matrix t44(Vec3 v) {
+		return new Matrix(new float[][] {
+			{1,0,0,v.x},
+			{0,1,0,v.y},
+			{0,0,1,v.z},
+			{0,0,0,1}
+		});
+	}
+	
 	public static Matrix rx44(float cos, float sin) {
 		return new Matrix(new float[][] {
 			{1,0,0,0},
@@ -56,7 +74,7 @@ public class Matrix {
 		return new Matrix(new float[][] {
 			{cos,-sin,0,0},
 			{sin,cos,0,0},
-			{0,0,0,0},
+			{0,0,1,0},
 			{0,0,0,1},
 		});
 	}

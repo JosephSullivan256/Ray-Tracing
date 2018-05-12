@@ -14,6 +14,8 @@ public class Vec3 {
 	public Vec3 times(Vec3 v) { return new Vec3(x*v.x,y*v.y,z*v.z); }
 	public Vec3 cross(Vec3 v) { return new Vec3(y*v.z-v.y*z,x*v.z-v.x*z,x*v.y-y*v.x); }
 	public Matrix asMatrix(){ return new Matrix(new float[][]{{x},{y},{z}}); }
+	public Matrix asMatrix4p(){ return new Matrix(new float[][]{{x},{y},{z},{1}}); } //position
+	public Matrix asMatrix4d(){ return new Matrix(new float[][]{{x},{y},{z},{0}}); } //direction
 	
 	@Override
 	public String toString() { return "<"+x+","+y+","+z+">"; }

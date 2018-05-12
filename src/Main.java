@@ -22,7 +22,7 @@ public class Main {
 		
 		Renderer r = new Renderer();
 		
-		RenderParameters rp = new RenderParameters((float)Math.PI/2f, new Vec3(0,0.5f,0),4);
+		RenderParameters rp = new RenderParameters((float)Math.PI/2f, Matrix.t44(new Vec3(0,0.5f,0)),4);
 		
 		BufferedImage image = new BufferedImage(400,400,BufferedImage.TYPE_INT_ARGB);
 		r.render(image, rp, s);
@@ -31,7 +31,7 @@ public class Main {
 		/*float i = 0;
 		while(true){
 			i++;
-			rp = new RenderParameters((float)Math.PI/((float)Math.sin(i/10f)+2f), new Vec3(3f*(float)Math.sin((i)/10f+Math.PI/2f),0.5f,0),4);
+			rp = new RenderParameters((float)Math.PI/2f, Matrix.rz44(i/10f),4);
 			r.render(image, rp, s);
 			d.update(image);
 		}*/
