@@ -4,7 +4,8 @@ public class StandardMaterial implements Material {
 	private int raysCount;
 	private float[] weights;
 	
-	private int diffuseRays;
+	private Vec3[] diffuseRays;
+	private Vec3[] specularRays;
 	
 	public StandardMaterial(int raysCount, float[] weights){
 		this.raysCount = raysCount;
