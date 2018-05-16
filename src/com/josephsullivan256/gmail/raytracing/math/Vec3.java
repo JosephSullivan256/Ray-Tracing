@@ -14,7 +14,7 @@ public class Vec3 {
 		this.y = ysin;
 		this.z = xcos*ycos;
 	}
-	public Vec3(float xsin, float xcos, float ysin, float ycos){
+	public Vec3(float xcos, float xsin, float ycos, float ysin){
 		this.x = xsin*ycos;
 		this.y = ysin;
 		this.z = xcos*ycos;

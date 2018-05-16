@@ -11,7 +11,7 @@ public class Scene {
 	}
 
 	public Vec3 shoot(Ray r, int n) {
-		if (n == 0)
+		if (n <= 0)
 			return Vec3.zero;
 		Renderable r0 = closestRenderable(r);
 		if (r0 != null)

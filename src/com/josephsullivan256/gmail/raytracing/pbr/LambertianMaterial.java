@@ -17,28 +17,35 @@ public class LambertianMaterial implements Material {
 	private List<Pair<Vec3, Float>> distrib;
 	
 	public LambertianMaterial(int azimuthRays, int zenithRays){
-		/*distrib = new ArrayList<Pair<Vec3,Float>>(azimuthRays*zenithRays);
+		distrib = new ArrayList<Pair<Vec3,Float>>(azimuthRays*zenithRays);
 		float total = 0;
 		for(int i = 0; i < azimuthRays; i++){
 			float azimuth = i*(2f*Vec3.PI/((float)azimuthRays));
 			float xcos = (float)Math.cos(azimuth);
 			float xsin = (float)Math.sin(azimuth);
 			for(int j = 0; j < zenithRays; j++){
-				float zenith = j*(0.5f*Vec3.PI/((float)zenithRays));
+				float zenith = j*(0.5f*Vec3.PI/((float)zenithRays+1));
 				float ycos = (float)Math.cos(zenith);
 				float ysin = (float)Math.sin(zenith);
-				distrib.add(Pair.init(new Vec3(xcos,xsin,ycos,ysin), ycos));
-				
-				total+=ycos;
+				if(ycos > 0.1f) {
+					distrib.add(Pair.init(new Vec3(xcos,xsin,ycos,ysin), ycos));
+					total+=ycos;
+				}
 			}
 		}
 		
 		for(int i = 0; i < distrib.size(); i++){
 			Pair<Vec3, Float> dir = distrib.get(i);
 			distrib.set(i, Pair.init(dir.a, dir.b/total));
-		}*/
+		}
+		/*float azimuth = 0;
+		float zenith = 0;
+		float xcos = (float)Math.cos(azimuth);
+		float xsin = (float)Math.sin(azimuth);
+		float ycos = (float)Math.cos(zenith);
+		float ysin = (float)Math.sin(zenith);
 		distrib = new ArrayList<Pair<Vec3,Float>>();
-		distrib.add(Pair.init(defaultNormal, 1f));
+		distrib.add(Pair.init(new Vec3(xcos,xsin,ycos,ysin), 1f));*/
 	}
 	
 	// in and normal must be normalized
