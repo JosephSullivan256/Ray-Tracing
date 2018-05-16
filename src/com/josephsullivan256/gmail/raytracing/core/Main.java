@@ -7,12 +7,12 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 import com.josephsullivan256.gmail.raytracing.SimpleMaterial;
-import com.josephsullivan256.gmail.raytracing.Renderables.RPlane;
-import com.josephsullivan256.gmail.raytracing.Renderables.RSphere;
-import com.josephsullivan256.gmail.raytracing.Renderables.SphereLight;
 import com.josephsullivan256.gmail.raytracing.math.Matrix;
 import com.josephsullivan256.gmail.raytracing.math.Vec3;
 import com.josephsullivan256.gmail.raytracing.pbr.LambertianMaterial;
+import com.josephsullivan256.gmail.raytracing.renderables.RPlane;
+import com.josephsullivan256.gmail.raytracing.renderables.RSphere;
+import com.josephsullivan256.gmail.raytracing.renderables.SphereLight;
 import com.josephsullivan256.gmail.raytracing.util.Display;
 
 public class Main {

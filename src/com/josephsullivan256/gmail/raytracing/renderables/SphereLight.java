@@ -1,4 +1,4 @@
-package com.josephsullivan256.gmail.raytracing.Renderables;
+package com.josephsullivan256.gmail.raytracing.renderables;
 import com.josephsullivan256.gmail.raytracing.core.Renderable;
 import com.josephsullivan256.gmail.raytracing.core.Scene;
 import com.josephsullivan256.gmail.raytracing.math.Ray;
