@@ -1,3 +1,4 @@
+package com.josephsullivan256.gmail.raytracing.util;
 import java.awt.image.BufferedImage;
 
 import javax.swing.ImageIcon;
@@ -7,8 +8,8 @@ import javax.swing.JLabel;
 public class Display {
 	private ImageIcon icon;
 	private JLabel label;
-	
-	public Display(BufferedImage img){
+
+	public Display(BufferedImage img) {
 		JFrame frame = new JFrame();
 		ImageIcon icon = new ImageIcon(img);
 		label = new JLabel(icon);
@@ -19,8 +20,8 @@ public class Display {
 		frame.pack();
 		frame.setVisible(true);
 	}
-	
-	public void update(BufferedImage img){
+
+	public void update(BufferedImage img) {
 		label.setIcon(new ImageIcon(img));
 	}
 }

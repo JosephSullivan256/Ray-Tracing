@@ -1,3 +1,4 @@
+package com.josephsullivan256.gmail.raytracing.math;
 
 public class Matrix {
 	private float[][] vals;
@@ -25,6 +26,7 @@ public class Matrix {
 	}
 	
 	public static final Matrix m44i = Matrix.i(4); //4x4 identity
+	public static final Matrix m33i = Matrix.i(3); //4x4 identity
 	
 	public static Matrix s44(Vec3 v) {
 		return new Matrix(new float[][] {
@@ -81,6 +83,51 @@ public class Matrix {
 	
 	public static Matrix rz44(float theta) {
 		return Matrix.rz44((float)Math.cos(theta),(float)Math.sin(theta));
+	}
+	
+	public static Matrix rx33(float cos, float sin) {
+		return new Matrix(new float[][] {
+			{1,0,0},
+			{0,cos,-sin},
+			{0,sin,cos},
+		});
+	}
+	
+	public static Matrix rx33(float theta) {
+		return Matrix.rx33((float)Math.cos(theta),(float)Math.sin(theta));
+	}
+	
+	public static Matrix ry33(float cos, float sin) {
+		return new Matrix(new float[][] {
+			{cos,0,sin},
+			{0,1,0},
+			{-sin,0,cos},
+		});
+	}
+	
+	public static Matrix ry33(float theta) {
+		return Matrix.ry33((float)Math.cos(theta),(float)Math.sin(theta));
+	}
+	
+	public static Matrix rz33(float cos, float sin) {
+		return new Matrix(new float[][] {
+			{cos,-sin,0},
+			{sin,cos,0},
+			{0,0,1},
+		});
+	}
+	
+	public static Matrix rz33(float theta) {
+		return Matrix.rz33((float)Math.cos(theta),(float)Math.sin(theta));
+	}
+	
+	public static Matrix columnVectors(Vec3 a, Vec3 b, Vec3 c){
+		return new Matrix(
+				new float[][]{
+					{a.x,b.x,c.x},
+					{a.y,b.y,c.y},
+					{a.z,b.z,c.z},
+				});
 	}
 	
 	private static float dot(int r, int c, Matrix a, Matrix b) {

@@ -1,4 +1,9 @@
+package com.josephsullivan256.gmail.raytracing.core;
+
 import java.awt.image.BufferedImage;
+
+import com.josephsullivan256.gmail.raytracing.math.Ray;
+import com.josephsullivan256.gmail.raytracing.math.Vec3;
 
 public class Renderer {
 	
@@ -19,7 +24,6 @@ public class Renderer {
 			
 			float xcos = (float) Math.cos(xtheta);
 			float xsin = (float) Math.sin(xtheta);
-			
 			for(int y = 0; y < height; y++){
 				float ytheta = -yfov*0.5f+yfov*((float)y)/(height); //technically wrong... ytheta should span a shorter range typically cause height<width
 				
@@ -31,6 +35,7 @@ public class Renderer {
 				Vec3 col = s.shoot(r,n);
 				image.setRGB(x, y, col.toColor().getRGB());
 			}
+			if(x%5==0) System.out.println((float)x/(float)width);
 		}
 	}
 }
